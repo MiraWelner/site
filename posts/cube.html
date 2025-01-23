@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>When a Spectra is a Cube</title>
+    <link rel="alternate" type="text/xml" title="RSS Feed for Mira Welner" href="https://mirawelner.com/rss.xml">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#333333">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="What I have learned from working in research labs which are in different fields, but study the same topic.">
+    <meta name="author" content="Mira Welner">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords"
+        content="spectroscopy, image processing, data science, machine learning, bioinformatics, Mira Welner">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="When a Spectra is a Cube">
+    <meta property="og:description"
+        content="What I have learned from working in research labs which are in different fields, but study the same topic.">
+    <meta property="og:image" content="../images/spectra_cube.png">
+    <meta property="og:url" content="https://mirawelner.com/posts/cube.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="When a Spectra is a Cube">
+    <meta name="twitter:description" content="What I have learned from working in research labs which are in different
+        fields, but study the same topic.">
+    <meta name="twitter:image" content="../images/spectra_cube.png">
+    <meta name="twitter:site" content="@MiraWelner">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/head-foot.css">
+    <link rel="stylesheet" type="text/css" href="../css/blog-page.css">
+    <link rel="canonical" href="https://mirawelner.com/posts/cube.html">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.ico">
+    <link rel="manifest" href="../site.webmanifest">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <img src="../images/logo.png" alt="logo" loading="lazy">
+        <div></div>
+        <nav>
+            <a href="../" class="nav-link">Home</a>
+            <a href="../all_posts.html" class="nav-link">Posts</a>
+        </nav>
+    </header>
+
+    <!-- Blog Page Content -->
+    <main>
+        <h1>When a Hyperspectral Image is a Cube</h1>
+
+        <p>When I was interning at Carnegie Mellon Vision Science Labs the summer after my junior year, I was
+            having difficulty running the code in a way that did not cause my small computer to crash. So, Professor
+            Sankaranarayanan told me to ask one of his graduate students for ways to make more efficient pipelines. I
+            told her I was working with hyperspectral images. She paused for a second and asked, "Are those cubes?" I
+            responded that they were. We eventually figured out a solution to the problem.
+        </p>
+        <p>
+            If you are at all familiar with spectroscopy, or or vision science in general, you are probably
+            wondering why they referred to hyperspectral images as 'cubes'. I will explain why. Let's say you want to
+            have a black and white image stored on a computer. The data looks like a square. Each value in the square
+            is a value from 0 to 1, with 0 being black and 1 being white. It looks kind of like this:
+        </p>
+        <figure>
+            <img class="blog-image-center" src="../images/b_w.png" alt="Black and white image representation">
+        </figure>
+        <p>
+            What about color images? It's not much more complex than black and white because it doesn't take much to
+            make the human eye perceive color. We call red, green, and blue the 'primary colors,' but that doesn't mean
+            that all colors are made up of red, green,
+            and blue. If you create light with a wavelength of 570–580 nanometers, you are going to
+            see yellow. Red, green, and blue are not present. However, if you have red light (620 to 750 nm) and
+            green light (490–580 nm), your brain will think
+            you are seeing yellow light. You are not! But our eyes are designed for fairly basic tasks, so it's
+            all we need. As a result, most computer screens
+            have only red, green, and blue diodes. That means that colored images are stored in computers like
+            this:
+        </p>
+        <figure>
+            <img class="blog-image-center" src="../images/color_rep.png" alt="Color image representation">
+        </figure>
+        <p>
+            With our limited eyes, we have a pretty good idea of the world around us. But what if we could get a
+            computer eye that could differentiate much narrower shades of color than a human eye can? There
+            would be one matrix for 490 to 495 nm, another for 495 to 500 nm, etc. That is what a hyperspectral image
+            is! You can't really display it on a standard screen because that isn't what
+            computers are designed to do, but you can get lots of data on what the substance you are observing is. And,
+            since there will be hundreds or thousands of matrices all stacked on top of each other, it looks kind of
+            like a cube! And that is why the graduate student called it a cube.
+        </p>
+        <p>
+            A year after this, I was working in Specere Labs, which studies light and spectroscopy. I was explaining to
+            some other researchers what I had been studying at CMU. But they didn't see hyperspectral images as cubes;
+            they saw them as groups of spectra.
+        </p>
+        <p>
+            Specere labs studied spectroscopy, but it rarely involved itself in the study of hyperspectral images.
+            The focus more was on the actual mechanisms of the infrared spectroscopy experimental equipment itself. 
+            Thus, the focus was more on materials science, heat transfer science, and chemistry.
+        </p>
+        <p>
+            When a spectrometer is used, it typically returns a spectra which looks somewhat like this:
+        </p>
+        <figure>
+            <img class="blog-image-center" src="../images/spectra.png" alt="Spectra representation">
+        </figure>
+        <p>
+            The above plot could be seen as a cross-section of a hyperspectral image, but almost nobody thinks
+            about it like that because that
+            is not how the spectral data is typically obtained. So in Specere Labs, hyperspectral images were
+            not cubes. They were groups of spectra
+            taken from regions nearby each other.
+        </p>
+        <p>
+            So while I don't think this information is earth-shattering, I think it does illustrate why I really
+            enjoy cross-disciplinary work and
+            learning from multiple professors in multiple labs.
+        </p>
+    </main>
+</body>
+
+</html>

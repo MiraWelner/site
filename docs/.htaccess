@@ -1,0 +1,13 @@
+<FilesMatch "\.(css|pdf|ico)$">
+    SetEnvIfNoCase User-Agent "Google" ALLOWED_GOOGLEBOT
+    SetEnvIf Referer "https://mirawelner.com" ALLOWED_REFERRER
+
+    # Modern access control
+    Require env ALLOWED_GOOGLEBOT
+    Require env ALLOWED_REFERRER
+    Require all denied
+
+    # No index for files
+    Header set X-Robots-Tag "noindex, nofollow"
+</FilesMatch>
+

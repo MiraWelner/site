@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>Can we communally deprecate git checkout?</title>
+    <link rel="alternate" type="text/xml"  title="RSS Feed for Mira Welner" href="https://mirawelner.com/rss.xml">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#333333">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Can we communally deprecate git checkout?">
+    <meta name="author" content="Mira Welner">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords"
+        content="git, git checkout, version control, programming, computer science, software development, Mira Welner">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Can we communally deprecate git checkout?" <meta property=" og:description"
+        content="The most cursed git command in existance">
+    <meta property="og:image" content="../images/git.png">
+    <meta property="og:url" content="https://mirawelner.com/posts/checkout.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Can we communally deprecate git checkout?">
+    <meta name="twitter:description" content="The most cursed git command in existance">
+    <meta name="twitter:site" content="@MiraWelner">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/head-foot.css">
+    <link rel="stylesheet" type="text/css" href="../css/blog-page.css">
+    <link rel="canonical" href="https://mirawelner.com/posts/checkout.html">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.ico">
+    <link rel="manifest" href="../site.webmanifest">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <img src="../images/logo.png" alt="logo" loading="lazy">
+        <div></div>
+        <nav>
+            <a href="../" class="nav-link">Home</a>
+            <a href="../all_posts.html" class="nav-link">Posts</a>
+        </nav>
+    </header>
+
+    <!-- Blog Page -->
+    <main>
+        <h1>Can we communally deprecate git checkout?</h1>
+        <p>I will start with the disclaimer that I really like git. I use it on nearly all of my programming
+            projects, have read the entirety of Pro Git, and every lab or company I have worked at has held its
+            codebase on GitHub, with the exception of the National Ignition Facility. For some reason, they use
+            Accurev, or at least they did when I worked there in 2019, which was much worse.
+        </p>
+        <p>I understand that git is an evolving open-source system, meaning that there are going to be redundant
+            commands. This has resulted in many people having their own git 'workflows' consisting of somewhat
+            arbitrary decisions they happened to make regarding which commands to use. For example, when attempting
+            to squash the last n commits together, I prefer to use <code class='code-line'>git rebase -i HEAD~n</code>
+            rather than
+            <code class='code-line'>git reset --soft HEAD~n</code> or <code
+                class='code-line'>git merge --squash HEAD@{n}</code>. Why? In part, because
+            I like creating a new commit message based on a concatenation of the commit messages for each commit I
+            am squashing, but mostly because of muscle memory. The only time I ever consciously changed which
+            command I use for a process was when I learned of the existence of <code
+                class='code-line'>git switch</code>, and started
+            using it to change and create branches rather than <code class='code-line'>git checkout</code>. This is
+            because
+            <code class='code-line'>git checkout</code>, as a command, is a complete and total disaster.
+        </p>
+        <p>Git checkout seems to go out of its way to be an absolute fiasco of a command. The official git
+            documentation describes <code class='code-line'>git checkout</code> as a function to "Switch branches or
+            restore working
+            tree files." That is <i>already</i> two different things that have little to do with each other, and
+            it's not even the full picture of what this sprawling, overloaded command is capable of. I think a more
+            thorough description would be: "It moves you from one branch to another, or creates a new branch which
+            it moves you to, or it reverts specific files to versions of themselves n commits prior. It also can
+            remove all unstaged files while reverting staged files to the version of themselves when they were
+            staged, or it can create a detached HEAD state." What does this even mean? That is not even a coherent
+            sentence! Why did people decide to make a single command do <i>all of Git's functionality?</i> What is
+            this madness?</p>
+        <p>Pro Git, the official book on git written by one of the founders of GitHub, fully admits that the
+            checkout command is an utterly cursed incarnation of Cthulhu, along with the reset function:</p>
+        <blockquote>These commands are two of the most confusing parts of git when you first encounter them. They do
+            so many things that it seems hopeless to actually understand them and employ them properly.</blockquote>
+        <p>The book then proceeds to give a thorough explanation of the checkout and reset functions (you can find
+            it <a href='https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified'>here</a>), which ends up being
+            one of the best explanations I have found of how Git functions as a whole. The reason it is such an
+            excellent explaination of git is because the only way to really understand deeply how
+            <code class='code-line'>git checkout</code>
+            works, <i>you have to fundamentally understand
+                the internal workings of git</i>. And that is all well and good, but <code
+                class='code-line'>git checkout</code> is a
+            command taught to people who are new to git, and a command that requires such a deep understanding of
+            how git works should, <i>not be a general-use command</i>.
+        </p>
+        <figure class="blog-image-right" style="margin-bottom:4em">
+            <img src="../images/xkcd_github.png">
+            <figcaption> If that doesn't fix it, git.txt contains the phone number of a friend of mine who
+                understands git. Just wait through a few minutes of 'It's really pretty simple, just think of
+                branches as...' and eventually you'll learn the commands that will fix everything.</figcaption>
+        </figure>
+        <p>In all seriousness, I do believe that, given a proper understanding of how git actually works,
+            <code class='code-line'>git checkout</code> makes sense. If you have a good grasp of how HEAD points to the
+            current
+            branch, and the branch is just a pointer to a commit, <code class='code-line'>git checkout</code> can be
+            viewed as a
+            command which moves the HEAD from branch to branch or sometimes from branch to a specific commit.
+            Normally, I would just say that this means that programmers should develop a deeper understanding of how
+            git works before using it, but the reason that git is different is that the vast majority of people who
+            I have taught how to use git were not developers. For non-programmers, git can be useful not as a
+            version control system, but as a way to access GitHub.
+        </p>
+        <p>The first time I ever explained git to somebody, they had not asked me to explain git, they had asked me
+            to explain GitHub. They were in a biomedical engineering lab which had decided to put all their code in
+            GitHub so it could be centralized, and they could all see each other's code. People didn't typically
+            collaborate on individual code projects so they didn't really need branches, they just needed to all
+            have the code in the same location so everybody could access it. The lab had asked one of the
+            undergraduate programmers to explain to the group how to use GitHub. They had done a bad job at
+            explaining how it worked, so I
+            explained <code class='code-line'>git init</code>, <code class='code-line'>git add</code>, <code
+                class='code-line'>git commit</code>, <code class='code-line'>git push</code>,
+            and <code class='code-line'>git pull</code> which is a very small fraction of git functionality, but if the
+            only reason
+            that a lab uses git is to put all the code in one location, that is the extent of what you need.
+        </p>
+        <p>The second time I explained git to somebody, it was as part of a presentation to Specere Labs at Purdue
+            University. I again focused on <code class='code-line'>git init</code>, <code
+                class='code-line'>git add</code>, <code class='code-line'>git commit</code>,
+            <code class='code-line'>git push</code>, and <code class='code-line'>git pull</code>. However, because it
+            was a fairly large lab and some
+            projects involved multiple people working on the same codebase, I also explained <code
+                class='code-line'>git branch</code>
+            and <code class='code-line'>git switch</code> because branches are useful with larger groups. However,
+            despite their use
+            of branches, I never explained to them how <code class='code-line'>git merge</code> and <code
+                class='code-line'>git rebase</code> work
+            because all of their branch merging would be done on GitHub via pull requests. Merge is complicated, and
+            it wasn't very useful given what the lab was doing.
+        </p>
+        <p>
+            For these groups of people using git, <code class='code-line'>git checkout</code> is extremely confusing!
+            And they are
+            also the most likely to stumble upon it since rather than reading the documentation they will look up
+            pre-written scripts online. I know that as software engineers, we don't typically want to change
+            our methodologies for the sake of people who are using tools built for us despite
+            not being real software engineers themselves, but at this point GitHub isn't just for software
+            engineers.
+            Also, we wouldn't be losing anything because <code class='code-line'>git checkout</code> is a pain to us as
+            well!
+        </p>
+        <figure class="blog-image-left">
+            <img src="../images/workflow.png">
+            <figcaption>There are probably children out there holding down spacebar to stay warm in the winter! YOUR
+                UPDATE MURDERS CHILDREN.</figcaption>
+        </figure>
+        <p>I'm not calling for Git to remove <code class='code-line'>git checkout</code>. They have been pretty clear
+            that it isn't
+            something they are looking to do, since removing the backward compatibility of basic git commands would
+            break a lot of scripts, and they have already added the more sensible <code
+                class='code-line'>git switch</code> and
+            <code class='code-line'>git restore</code>. If somebody wants to update their workflow to more sane
+            commands, they can
+            simply use those two rather than the ungodly <code class='code-line'>git checkout</code>. Git is an
+            open-source project
+            which has to provide functional version control for groups ranging from the Linux development team, who
+            presumably use commands like <code class='code-line'>git rerere</code> and <code
+                class='code-line'>git bisect</code>, to mechanical
+            engineering labs who just want to put MATLAB on an accessible website, and it is doing a fantastic job
+            of it.
+        </p>
+        <p>The issue, however, is that most people who know git don't learn it from Pro Git, they learn it from
+            their friends and Stack Overflow. I used git badly for an embarrassingly long time before actually going
+            through the documentation and learning what each command really does. Most people are learning the
+            individual workflows of their friends and internet people, which often include
+            <code class='code-line'>git checkout</code>. So I am not asking for an official deprecation, but rather a
+            communal deprecation. Just stop teaching junior developers to use checkout because chances are it will
+            be entombed in their muscle memory for a long while after.
+        </p>
+        <p> If you are a person who contributes to Stack Overflow (thank you, by the way) or
+            gives advice to junior developers (also thank you), please stop teaching them to use
+            <code class='code-line'>git checkout</code>! Teach them <code class='code-line'>git switch</code> and <code
+                class='code-line'>git restore</code>. Or if you
+            don't like restore, try reset which is also somewhat cursed but less cursed than checkout. Git is
+            an amazing version control system, but it's better if you avoid the eldritch horrors hidden within.
+        </p>
+    </main>
+
+    <div class="comments">
+        <h3>Questions, comments, or criticism?</h3>
+        <p>Join the discussion!</p>
+        <a href= "https://news.ycombinator.com/item?id=42649858">HackerNews</a>
+        <a href= "https://lobste.rs">Lobste.rs</a>
+
+    </div>
+</body>
+
+</html>

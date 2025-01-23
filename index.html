@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mira Welner's Personal Site</title>
+    <meta name="description"
+        content="The site where I talk about what I'm working on! Updates on what I’m doing and thoughts about programming, research, data science, and bioinformatics">
+    <meta name="author" content="Mira Welner">
+    <meta name="keywords"
+        content="programming, software, AI, machine learning, bioinformatics, data science, Mira Welner">
+    <link rel="canonical" href="https://mirawelner.com/">
+    <link rel="alternate" type="text/xml" title="RSS Feed for Mira Welner" href="https://mirawelner.com/rss.xml">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/head-foot.css">
+    <link rel="stylesheet" href="../css/home-page.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/x-ico" sizes="32x32" href="favicons/favicon-32x32.ico">
+    <link rel="icon" type="image/x-ico" sizes="16x16" href="favicons/favicon-16x16.ico">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Mira Welner's Personal Site">
+    <meta property="og:description" content="What I've worked on and what I'm working on">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://mirawelner.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mira Welner's Personal Site">
+    <meta name="twitter:description" content="What I've worked on and what I'm working on">
+    <meta name="twitter:image" content="images/logo.png">
+    <meta name="twitter:site" content="@MiraWelner">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="robots" content="index, follow">
+
+    <!-- JavaScript -->
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+    <script data-goatcounter="https://mira.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+
+<body onload="getData()">
+
+    <!-- Header -->
+    <header>
+        <img src="images/logo.png" alt="logo">
+        <div><span id="prompt">user@mirasite ~></span></div>
+        <nav>
+            <a href="./" class="nav-link">Home</a>
+            <a href="all_posts.html" class="nav-link">Posts</a>
+        </nav>
+    </header>
+
+    <!-- Welcome Section -->
+    <main>
+        <section id="welcome-section">
+            <div class="welcome-content">
+                <h1 class="typing-animation">Hello</h1>
+                <p>My name is Mira Welner</p>
+                <p><a href="mailto:miraewelner@gmail.com">miraewelner@gmail.com</a></p>
+                <p>
+                    <!---<a href="docs/CV.html">CV</a> | -->
+                    <a href="docs/resume.html">Resume</a> |
+                    <a href="docs/transcript.html">Transcript</a> |
+                    <a href="https://github.com/MiraWelner" target="_blank" rel="noopener noreferrer">GitHub</a> |
+                    <a href="https://www.linkedin.com/in/mirawelner" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                </p>
+                <p>
+                    <a href="https://news.ycombinator.com/submitted?id=mirawelner">HackerNews</a> |
+                    <a href="https://lobste.rs/~MiraWelner/stories">Lobste.rs</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Raspberry Pi Section -->
+        <section class="raspberry-pi-section">
+            <div class="section-content">
+                <h2>This site is proudly hosted on a Raspberry Pi 4 <span class="raspberry-logo"></span></h2>
+                <p>
+                    <span id="stats">PI location: My Room <br> CPU Temp: Loading...<br> CPU Use: Loading...<br> Total
+                        RAM:
+                        Loading...<br> Used RAM: Loading... </span>
+                </p>
+
+            </div>
+        </section>
+
+
+        <section class="bright-color-section">
+            <div class="section-content">
+                <h2>Min Xu labs</h2>
+                <p>I am currently heading a machine learning research project with <a href='https://cbd.cmu.edu/people/xu.html'>Professor
+                        Min Xu</a> and Dr. Jingru Yang in the computational biology department of Carnegie Mellon
+                    University.</p>
+
+                <p>I am responsible for leading and completing a project in which we will develop new particle picking algorithms
+                    for membrane-bound proteins using machine learning and data from Cryo-ET tomograms. This will improve our ability 
+                    to learn more about the nature and function of the protein chains embedded in cell membranes.
+
+                <p>This is an unfunded position so I am currently looking for paid opportunities!</p>
+
+            </div>
+        </section>
+
+        <!-- Signature Diagnostics Section -->
+        <section class="dark-color-section">
+            <div class="section-content">
+                <h2>Signature Diagnostics</h2>
+                <p>From July 2023 to November 2024 I was a bioinformatics engineer for <a href="https://signaturedx.com"
+                        target="_blank" rel="noopener noreferrer">Signature Diagnostics</a>, a biotech startup which
+                    develops assays for non-invasive prenatal screening.</p>
+
+                <p>At Signature, I transitioned a binary classifier based on a proprietary algorithm into a
+                    multi-class classifier which used a separate algorithm I developed to filter out misleading data.</p>
+
+                <p>One of the focuses of the analytics team I was on was to ensure that the statistical results we were
+                    getting resembled what we know to be biologically true. To this end I conducted an analysis
+                    comparing a proprietary
+                    algorithm with various regression models to see to what extend to genes identified by the algorithms
+                    were on similar
+                    genetic pathways, or the pathways that we expected.</p>
+
+                <p>My final project at Signature Diagnostics was to use retreival augmentation generation to improve the
+                    ability of an LLM
+                    to describe what we already know. I was able to get more specific results using pathways rather than
+                    specific genes as
+                    augmentaion data.</p>
+            </div>
+        </section>
+
+
+        <!-- Specere Labs Section -->
+        <section class="bright-color-section">
+            <div class="section-content">
+                <h2>Specere Labs</h2>
+                <p>From August 2022 to November 2024 I was a spectroscopy and computer vision researcher for <a
+                        href="https://www.specere.org" target="_blank" rel="noopener noreferrer">Specere Labs</a> at
+                    Purdue University run by Professor Thomas Beechem.
+                </p>
+
+                <p>
+                    While working with Professor Beechem I developed an algorithm which uses non-negative matrix
+                    factorization to detect contaminants in mediums such as water. By decomposing the spectral data into
+                    its component weights and eigenvectors (which we call 'eigenspectra'), we can use the weights alone
+                    to determine whether a substance is contaminated using far less data than standard methods.
+
+                </p>
+                <p>We believe that this algorithm will pave the way for the development of highly effective, but also
+                    affordable, spectroscopy systems as opposed to the current systems which are either expensive and
+                    accurate, or cheap and less accurate.
+                </p>
+                <p>
+
+                    Paper and code coming soon!
+                </p>
+            </div>
+        </section>
+
+        <!-- Carnegie Mellon Vision Science Labs Section -->
+        <section class="dark-color-section">
+            <div class="section-content">
+                <h2>Carnegie Mellon Vision Labs</h2>
+                <p>
+                    In the summer of 2021, I worked with Professor Aswin Sankaranarayanan at the Carnegie Mellon
+                    University Image Science Laboratory. During this period, I developed an unsupervised learning method
+                    to identify prominent materials in hyperspectral images using a modified visual autoencoder.
+                </p>
+                <p>
+                    Our work was presented at the 36th AAAI Conference on Artificial Intelligence
+                </p>
+                <cite>
+                    Welner, M. (2022). Unsupervised Identification of Materials with Hyperspectral Images. Proceedings
+                    of the AAAI Conference on Artificial Intelligence, 36(11), 13144-13145
+                </cite>
+                <p>
+                    <a href="https://github.com/MiraWelner/Unsupervised-Identification-of-Materials-with-Hyperspectral-Images-code"
+                        class="external-link" target="_blank" rel="noopener noreferrer">Code</a> |
+                    <a href="https://doi.org/10.1609/aaai.v36i11.21708" class="external-link" target="_blank"
+                        rel="noopener noreferrer">Paper</a>
+                </p>
+                <p>
+                    <strong>Lightning Talk:</strong> Presented at the AAAI Undergraduate Consortium:
+                </p>
+                <div class="video-container">
+                    <video poster="images/lightning_talk_title_img.png" controls title="Lightning talk presentation">
+                        <source src="docs/lightning_talk.mov" type="video/mp4">
+                        Your browser does not support the <code>&lt;video&gt;</code> tag.
+                    </video>
+                </div>
+                <p>Additionally, I presented a <a href="docs/rice_poster.html">poster</a> at the 2021 Virtual Ken
+                    Kennedy
+                    AI and Data Science Conference, as well as the following talk:</p>
+                <div class="video-container">
+                    <iframe loading="lazy" src="https://www.youtube.com/embed/CvCrZSAqwbI"
+                        title="YouTube video of the talk"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <p>Finally, I presented a <a href="docs/purdue_poster.html">poster</a> at the 2021 Virtual Purdue
+                    Undergraduate Research Conference.</p>
+            </div>
+        </section>
+
+        <!-- BEAR Labs Section -->
+        <section class="bright-color-section">
+            <div class="section-content">
+                <h2>BEAR Laboratories</h2>
+                <p>
+                    As an undergraduate, I was a member of the Bionic Engineering And Assistive Robotics Lab run by
+                    Professor Jonathon Schofield. I used Java and Unity3D to design a video game as a data collection
+                    system for a user study with young participants. I also worked with graduate students to collect and
+                    analyze data from other studies conducted by the lab.
+                </p>
+                <p>This work led to me receiving a <a href="docs/PUF_Award.html">2021 Provost Undergraduate
+                        Fellowship</a>, which provided the lab with a $1800 grant to continue researching child
+                    prosthetics. As part of the fellowship I presented the following <a
+                        href="docs/schofield_presentation.html" class="external-link" target="_blank"
+                        rel="noopener noreferrer">poster</a></p>
+
+                <p>The findings of the entire project were presented at the 2022 International Conference on
+                    Rehabilitation Robotics (ICORR).</p>
+                <cite>M. A. Battraw, P. R. Young, M. E. Welner, W. M. Joiner and J. S. Schofield, "Characterizing
+                    Pediatric Hand Grasps During Activities of Daily Living to Inform Robotic Rehabilitation and
+                    Assistive Technologies," 2022 International Conference on Rehabilitation Robotics (ICORR),
+                    Rotterdam, Netherlands, 2022, pp. 1-6</cite>
+                <p>
+                    <a href="https://ieeexplore.ieee.org/document/9896512" class="external-link" target="_blank"
+                        rel="noopener noreferrer">Paper</a>
+                </p>
+                <h3>Programming a Prosthetic Hand</h3>
+                <p>
+                    At one point, I was given a prosthetic hand to program with a myoelectric detection system. Below is
+                    a video of me using it.
+                </p>
+                <div class="video-container" id="robot_arm">
+                    <video poster="images/robot_hand_title_img.png" controls title="Robot Hand Display">
+                        <source src="docs/robot.mov" type="video/mp4">
+                        Your browser does not support the <code>&lt;video&gt;</code> tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- dARCHr Labs Section -->
+        <section class="dark-color-section">
+            <div class="section-content">
+                <h2>dARCHr Labs</h2>
+                <p>
+                <p>
+                    During the winter of 2019, I researched at a computer architecture lab at UC Davis led by Professor
+                    Lowe-Power. My work involved updating the lab's web application to display their results quickly and
+                    clearly, enabling graduate students to iterate their experiments without laboriously searching
+                    through text output. You can find my contributions in the now archived <a
+                        href="https://github.com/darchr/gem5art" target="_blank" rel="noopener noreferrer">GitHub
+                        repository</a>.
+                </p>
+                <img src="images/gem5site.jpg" alt="GEM5SITE Team" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Lawrence Livermore Labs Section -->
+        <section class="bright-color-section">
+            <div class="section-content">
+                <h2>Lawrence Livermore National Laboratories</h2>
+                <p>
+                    In the summer of 2019, I worked as a Summer Scholar for the Computing Division of the National
+                    Ignition Facility at Lawrence Livermore Laboratories. My responsibilities included updating the
+                    codebase that controls the National Ignition Facility—the world's most energetic laser beam. This
+                    involved transitioning from Java 8 to Java 11, adding unit tests, and modernizing the coding style
+                    for legacy code.
+                </p>
+                <p>The findings were presented in a <a href="docs/upgrading_to_java_11.html" class="external-link"
+                        target="_blank" rel="noopener noreferrer">poster</a> at the 2019 National Ignition Facility
+                    Summer Scholar Research Symposium.</p>
+                <p>I also participated in the <a
+                        href="https://www.llnl.gov/article/45591/hackathoners-put-coding-skills-test" target="_blank"
+                        rel="noopener noreferrer">LLNL Hackathon</a>.</p>
+                <img src="images/LLNL_Team.png" alt="LLNL Team" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Hyperloop Section -->
+        <section class="dark-color-section">
+            <div class="section-content">
+                <h2>OneLoop</h2>
+                <p>
+                    In 2018, I joined OneLoop, the Hyperloop team at UC Davis, where I designed a failure reporter to
+                    indicate whether our racing pod was encountering any issues. That summer, our team placed in the top
+                    21 teams globally and was invited to race our pod at the SpaceX facility.
+                </p>
+                <p>
+                    In 2019, I was appointed president of OneLoop and led the team for a year and a half. During the
+                    pandemic, while SpaceX canceled all future competitions, I continued to lead the team in developing
+                    new braking and propulsion systems and secured sponsorships such as ANSYS. The team is now working
+                    towards competing in European Hyperloop Week.
+                </p>
+                <img src="images/oneloop_team.jpg" alt="OneLoop Team" loading="lazy">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://akols.com/previous?id=mira">← Previous</a>
+        <span></span>
+        <a href="https://akols.com/">Epesooj Webring</a>
+        <span></span>
+        <a href="https://akols.com/next?id=mira">Next →</a>
+    </footer>
+
+</body>
+
+</html>

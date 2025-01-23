@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /txt/*
+Disallow: /docs/*.pdf
+Sitemap: https://mirawelner.com/sitemap.xml
+

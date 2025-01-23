@@ -1,0 +1,18 @@
+<FilesMatch "\.(css|pdf|ico|gitignore)$"> # if the file is a css file, a pdf file, or an icon file
+	#Google is an 'ALLOWED_GOOGLEBOT'
+    SetEnvIfNoCase User-Agent "Google" ALLOWED_GOOGLEBOT
+    #other pages in the site are 'ALLOWED_REFERRER'
+    SetEnvIf Referer "https://mirawelner.com" ALLOWED_REFERRER 
+
+    #if its googlebot or refferer it can look, otherwise no
+    Require env ALLOWED_GOOGLEBOT
+    Require env ALLOWED_REFERRER
+    Require all denied
+
+    # However even if you are google, you can look, but can't index or follow
+    Header set X-Robots-Tag "noindex, nofollow"
+</FilesMatch>
+
+<Files ~ "sitemap.xml">
+  Header append X-Robots-Tag "noindex"
+</Files>

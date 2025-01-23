@@ -1,0 +1,165 @@
+/*Welcome section*/
+#welcome-section {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background-image: radial-gradient(circle at center, #00bcd4 0%, #004d88 60%, #000000 100%);
+}
+
+.welcome-content {
+    color: var(--text-green);
+    font-family: var(--font-body);
+    display: grid;
+    gap: 1.5rem;
+    padding: 3rem 1rem 3rem 1rem;
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 2px solid #09ff00;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0, 255, 127, 0.5);
+}
+
+.welcome-content a {
+    color: var(--color-link);
+    font-family:  var(--font-body);
+    text-decoration: none;
+    color: var(--color-link);
+    transition: color 0.3s ease;
+    text-align: center;
+
+}
+.welcome-content a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+    outline: 2px solid var(--color-link);
+    outline-offset: 2px;
+}
+
+.welcome-content h1 {
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 3rem;
+    font-weight: bold
+}
+
+.typing-animation {
+    overflow: hidden;
+    border-right: .15em solid var(--text-green); 
+    white-space: nowrap;
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: typing 0.75s steps(5, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 5ch;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--color-text);
+    }
+}
+
+
+/*Resume sections*/
+.section-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 2;
+}
+
+.section-content p {
+    font-family: var(--font-body);
+    margin: 1rem 0;
+}
+
+.section-content h2 {
+    font-family: var(--font-heading);
+    color: var(--text-green)
+}
+
+.section-content a {
+    color: var(--color-link)
+}
+.section-content a:hover{
+    color: var(--color-link-hover);
+    text-decoration: underline;
+    outline: 2px solid var(--color-link);
+    outline-offset: 2px;
+}
+
+.raspberry-pi-section {
+    background-color: #8c00ff;
+    padding: 2rem;
+    color: white;
+    border-top: 1px solid var(--color-border);
+    text-align: left;
+
+}
+
+.raspberry-logo {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: url('../images/mobile_rpi_logo.png') no-repeat center center;
+    background-size: contain;
+    vertical-align: middle;
+}
+
+.bright-color-section {
+    padding: 2rem;
+    background-color: var(--bright-background);
+    color: var(--color-text);
+    border-top: 1px solid var(--color-border);
+    text-align: left;
+    color:var(--bright-background-text);
+}
+
+.dark-color-section {
+    padding: 2rem;
+    background-color: var(--dark-background);
+    color: var(--color-text);
+    border-top: 1px solid var(--color-border);
+    text-align: left;
+    color:var(--dark-background-text);
+}
+
+/*videos and images*/
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding-top: 56.25%;
+    margin: 2rem auto;
+}
+
+.video-container iframe,
+.video-container video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.section-content img {
+    width:100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel> <title>
+			Mira Welner's Tech Blog!
+		</title>
+		<link>
+			https://mirawelner.com/rss.xml
+		</link>
+		<description>
+			Implemented by request of HackerNews commenters!
+		</description>
+		<lastBuildDate>
+			Sun, 19 Jan 2025 20:00:12 -0500
+		</lastBuildDate>
+		<language>
+			en-us
+		</language>
+		<link href="https://mirawelner.com/rss.xml" rel="self" type="application/rss+xml" />
+		<item>
+			<title>
+				The Codebase at a Very Important (Anonymous) Federal Facility
+			</title>
+			<link>
+				https://mirawelner.com/posts/fed_code.html
+			</link>
+			<description>
+				An observation of the very low quality of code at a certain important federal lab
+			</description>
+			<pubDate>
+				Fri, 19 Jan 2024 7:00:00 -0500
+			</pubDate>
+			<guid>
+				https://mirawelner.com/posts/fed_code.html
+			</guid>
+		</item>
+		<item>
+			<title>
+				When a Hyperspectral Image is a Cube
+			</title>
+			<link>
+				https://mirawelner.com/posts/cube.html
+			</link>
+			<description>
+				Why I tend to gravitate towards interdiciplinary labs and teams.
+			</description>
+			<pubDate>
+				Wed, 21 Feb 2024 10:00:00 -0500
+			</pubDate>
+			<guid>
+				https://mirawelner.com/posts/cube.html
+			</guid>
+		</item>
+		<item>
+			<title>
+				Why I Don't Like Hackathons
+			</title>
+			<link>
+				https://mirawelner.com/posts/hackathons.html
+			</link>
+			<description>
+				Why I think that events encouraging rushed code are not neccecarily the greatest to participate in.
+			</description>
+			<pubDate>
+				Sat, 9 March 2024 19:00:00 -0500
+			</pubDate>
+			<guid>
+				https://mirawelner.com/posts/hackathons.html
+			</guid>
+		</item>
+		<item>
+			<title>
+				Perspectives from the Technical University of Munich
+			</title>
+			<link>
+				https://mirawelner.com/posts/TUM_thoughts.html
+			</link>
+			<description>
+				Some important differences between US university and schools elsewhere.
+			</description>
+			<pubDate>
+				Wed, 12 June 2024 09:00:00 -0500
+			</pubDate>
+			<guid>
+				https://mirawelner.com/posts/TUM_thoughts.html
+			</guid>
+		</item>
+		<item>
+			<title>
+				Can we communally deprecate git checkout?
+			</title>
+			<link>
+				https://mirawelner.com/posts/checkout.html
+			</link>
+			<description>
+				The post that got so much more hate than I anticipated (but perhaps some was warranted).
+			</description>
+			<pubDate>
+				Mon, 8 Jan 2025 14:00:00 -0500
+			</pubDate>
+			<guid>
+				https://mirawelner.com/posts/checkout.html
+			</guid>
+		</item>
+		<item>
+			<title>
+				How I built this website on a Raspberry Pi
+			</title>
+			<link>
+				https://mirawelner.com/posts/website_howto.html
+			</link>
+			<description>
+				A step by step guide for beginners on how to host a professional personal site on a pi or a similar small computer.
+			</description>
+			<pubDate>
+				Sat, 18 Jan 2025 14:00:00 -0500
+			</pubDate>
+			<guid>
+				https://mirawelner.com/posts/website_howto.html
+			</guid>
+		</item>
+	</channel>
+</rss>

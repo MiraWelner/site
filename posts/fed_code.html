@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>The Codebase at a Very Important (Anonymous) Federal Facility</title>
+    <link rel="alternate" type="text/xml"  title="RSS Feed for Mira Welner" href="https://mirawelner.com/rss.xml">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#333333">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="A look into the quality (or lack therof) of the code in a very high-stakes facility.">
+    <meta name="author" content="Mira Welner">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords"
+        content="spectroscopy, image processing, data science, machine learning, bioinformatics, Mira Welner">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="The Codebase at a Very Important (Anonymous) Federal Facility">
+    <meta property="og:description"
+        content="A look into the quality (or lack therof) of the code in a very high-stakes facility.">
+    <meta property="og:image" content="../images/bad_code.png">
+    <meta property="og:url" content="https://mirawelner.com/posts/fed_code.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Codebase at a Very Important (Anonymous) Federal Facility">
+    <meta name="twitter:description"
+        content="A look into the quality (or lack therof) of the code in a very high-stakes facility.">
+    <meta name="twitter:site" content="@MiraWelner">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/head-foot.css">
+    <link rel="stylesheet" type="text/css" href="../css/blog-page.css">
+    <link rel="canonical" href="https://mirawelner.com/posts/fed_code.html">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.ico">
+    <link rel="manifest" href="../site.webmanifest">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <img src="../images/logo.png" alt="logo" loading="lazy">
+        <div></div>
+        <nav>
+            <a href="../" class="nav-link">Home</a>
+            <a href="../all_posts.html" class="nav-link">Posts</a>
+        </nav>
+    </header>
+
+    <!-- Blog Page -->
+    <main>
+        <h1>The Codebase at a Very Important (Anonymous) Federal Facility</h1>
+        <p>During my freshman year, I lived in a magical world. In this magical freshman world, students sometimes
+            turned in sloppy code, but professionals always took the time to write nice, maintainable codebases.
+            Everybody, as far as I could tell, followed best practices. Everybody used Git and GitHub, and proper
+            branching protocols were
+            always followed. And like most freshmen, this dream was shattered very quickly.</p>
+        <p>For me, this dream was shattered the summer after my freshman year when I went to work for a national
+            laboratory. I will not be mentioning this lab by name in this post for security reasons, but if you look
+            at the homepage, you can probably figure it out. Let's just call it "Lame Llama National Labs."
+        </p>
+        <p>Lame Llama National Labs was a top security lab. I was given Property Protection clearance, but I knew
+            people who had Q clearance. Actually, when I asked them what their clearance was, they had to report
+            that I had asked them about what clearance they were. Lame Llama National Labs was the real deal.</p>
+        <p>LLNL's codebase did not have unit tests. Well, it had <i>some</i>, but nobody knew what percent of the
+            codebase had test coverage. Part of my job was writing unit tests while I was adding new code. The
+            reason
+            why I had to create new unit tests, rather than update old ones was that the part of the codebase I was
+            working on did not have test coverage.</p>
+        <p>I was updating the codebase from Java 8 to Java 11. While looking at the codebase, I came across a file
+            that said it was from the Java 4 library. But it was not imported from the library; it was just a code
+            file claiming to be from the Java 4 library sitting in our Java 8 codebase. The file appeared to be
+            lost. I scrolled down and saw that at one point in the file, there was a constant setting a limit
+            regarding the number of threads that could be spawned (I don't recall what the library did). There was a
+            comment declaring that the constant was too low in the original library, so they copied and pasted the
+            library file and manually changed the constant. This file had stayed there since the days of Java 4. I
+            don't know if there were any repercussions for increasing the thread count; perhaps our computers were
+            so strong that it did not matter. It was, after all, a national lab.</p>
+        <p>During my time at LLNL, there was a code rollout. This was basically a 'push to production,' except that
+            for the day of the push, it was all hands on deck because they knew there were going to be errors. Errors
+            that would cause the people working in the extremely high-tech and high-security physics labs to
+            complain. This sort of thing happened about every six months when they rolled out production.</p>
+        <p>LLNL did not use Git; it used Accurev. I prefer Git to Accurev simply because I'm familiar with Git, but
+            Accurev was presumably the right call for such a large company. But in order to update something with
+            Accurev, you had to go through a ton of checks, so there was just dead code hanging around everywhere
+            because nobody wanted to go through the whole ordeal of updating it. My supervisor's supervisor claimed this
+            was not supposed to happen.</p>
+        <p>Many of the files seemed to have not been updated in a while. The copyright message for the main GUI
+            copyrighted it from the University of California, even though LLNL had not been part of the UC system
+            since 2007. I was working there in 2019. Some of the other code files were copyrighted from 1999, before
+            I was born. Perhaps this code was just very future-proof!</p>
+        <p>My direct supervisor did not believe in test-driven development. He said it was unrealistic, and that
+            nobody actually programmed like that. He also thought that it was silly to chase after warnings because
+            warnings are not really errors, they are just complaints that the IDE makes and the IDE is just a tool.
+            You can suppress warnings, the IDE might be wrong. A warning is not as bad as an error and a different
+            IDE configuration might give you different warnings.</p>
+        <p>Part of my job was creating a Python script that looked at all of the imported Java libraries and their
+            dependencies. There were several hundred libraries, and they all had quite a few dependencies. This was
+            the 10th circle of Java Library Dependency Hell.</p>
+        <p>So you may be wondering, why was the code at such a fancy lab this bad? Well, my supervisor's supervisor
+            claimed it was because they had trouble recruiting young people. But this doesn't make sense: even if
+            you are good at code, you will still age like everybody else. If you age, you will become old. This
+            proccess, while sometimes unfortunate, does not decrease your ability to code. In fact, you often become
+            better after so many years of practice. Being old and being good at code are not mutually exclusive.</p>
+        <p>I think a part of it is that they don't pay as much as Google and similar companies? And maybe another
+            part of it is just a cycle of bad code: their codebase is so bad that they can't hire good people, and the
+            codebase just becomes worse as a result. There is also that one minor issue that nobody at the lab wants to
+            talk about, which is that young people may not be politically aligned with the mission of the lab. But
+            honestly, 90% of the lab was physics research, so I really don't think that was a huge part of the issue.
+            I'm not sure. In any case, now you know that a very important codebase associated with the military has
+            extremely bad code, and you will have trouble sleeping at night.</p>
+    </main>
+</body>
+
+</html>

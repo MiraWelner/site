@@ -1,0 +1,229 @@
+body {
+    background: var(--color-nav-background);
+
+}
+
+main {
+    padding: 3rem 3rem;
+    background-color: #E0E0E0;
+    color: #000;
+    margin: 0rem auto;
+    max-width: 800px;
+
+}
+
+figure img {
+    vertical-align: top;
+}
+
+
+blockquote {
+    font-size: 1.2em;
+    font-style: italic;
+    padding: 15px;
+    color: #555;
+    border-left: 5px solid #ccc;
+    margin: 2rem 0;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+}
+
+p {
+    font-family: var(--font-blog);
+    line-height: 1.5;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+}
+
+ul {
+    line-height: 0.5;
+    font-size: 1.1rem;
+    font-family: var(--font-blog);
+    list-style-position: inside;
+}
+
+ol {
+    list-style-position: inside;
+    background-color: rgb(235, 235, 235);
+    border-radius: 30px;
+    border: 2px solid var(--color-border);
+    margin-top:2rem
+}
+
+ol li {
+    line-height: 1.6;
+    margin: 0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 1rem;
+    color: #333;
+}
+
+ol a {
+    color: var(--color-link);
+    font-family:  var(--font-body);
+    text-decoration: none;
+    color: var(--bright-purp);
+    transition: color 0.3s ease;
+    text-align: center;
+
+}
+
+ol a:hover {
+    text-decoration: underline;
+    outline: 2px solid var(--color-link);
+    outline-offset: 2px;
+}
+
+ul li {
+    line-height: 1.0;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+}
+
+.blog-page a {
+    color: #3946b9;
+}
+
+.blog-image-left {
+    float: left;
+    margin: 0 0 1rem 1rem;
+    height: 30rem;
+    max-width: 300px;
+}
+
+.blog-image-right {
+    float: right;
+    margin: 1rem 1rem 1rem 1rem;
+    height: 30rem;
+    max-width: 300px;
+
+}
+
+.blog-image-left img,
+.blog-image-right img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+}
+
+.blog-image-left figcaption,
+.blog-image-right figcaption {
+    margin: 0.5rem;
+}
+
+
+
+.blog-image-center {
+    display: block;
+    margin-top: 10px;
+    max-height: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-image-large {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+figcaption {
+    text-align: left;
+    font-style: italic;
+    color: #555;
+    margin: 10px;
+    font-size: 1rem;
+}
+
+.code-line {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    padding: 2px;
+    line-height: 1.5;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.code-block {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 1rem;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow-x: auto;
+    white-space: nowrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #444;
+    max-width: 100%;
+    display: block;
+}
+
+.hackernews-comment {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6ef;
+    color: #000;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    margin: 10px 0;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 4px;
+}
+
+
+.comments {
+    border-top: 2px solid var(--color-border);
+    display: grid;
+    line-height: 1;
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem;
+    background-color: #b2b2b6;
+    margin: 0rem auto;
+    color: black;
+    max-width: 800px;
+
+}
+
+.comments h3 {
+    font-family:var(--font-heading);
+    grid-column: span 2; 
+}
+.comments p {
+    font-family:var(--font-heading);
+    grid-column: span 2; 
+}
+.comments a {
+    color: var(--color-link);
+    font-family:  var(--font-body);
+    text-decoration: none;
+    color: var(--bright-purp);
+    transition: color 0.3s ease;
+    text-align: center;
+
+}
+.comments a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    blockquote {
+        margin: 1rem 0rem;
+    }
+
+    ol li {
+        padding-left: 0.5rem;
+    }
+}
